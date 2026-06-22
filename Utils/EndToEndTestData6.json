@@ -1,0 +1,22 @@
+[{
+    "email" : "harishholkar.99@gmail.com",    
+    "pass" : "Udemy@5657",    
+    "productName" : "ADIDAS ORIGINAL",    
+    "countryKeywords" : "cub",    
+    "dropdownOption" : " Cuba",    
+    "cvvCode" : "054",    
+    "cardName" : "Body Time",    
+    "coupon" : "rahulshettyacademy",    
+    "couponText" : "Applied"
+},
+{
+    "email" : "ayushkhanna@gmail.com",    
+    "pass" : "Ayush@5657",    
+    "productName" : "iphone 13 pro",    
+    "countryKeywords" : "ind",    
+    "dropdownOption" : " India",    
+    "cvvCode" : "078",    
+    "cardName" : "Automation Time",    
+    "coupon" : "rahulshettyacademy",    
+    "couponText" : "Applied"
+}]
