@@ -1,9 +1,9 @@
 class CheckoutPO {
 
-    constructor(page) {
+    constructor(page, productName) {
         this.page = page;
-        this.cartText = page.locator("//h3[text()='iphone 13 pro']");  //xpath
-        this.cartTextCSS = page.locator("h3:has-text('iphone 13 pro')"); //CSS
+        this.cartText = page.locator("//h3[text()='"+productName+"']");  //xpath
+        this.cartTextCSS = page.locator("h3:has-text('"+productName+"')"); //CSS
         this.checkoutBt = page.locator("//button[text()='Checkout' ]");
         this.waiting = page.locator(".cartSection h3");
     }

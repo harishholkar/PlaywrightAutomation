@@ -10,7 +10,7 @@ test(`Product '${data.productName}'`, async ({ browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    const pOManager = new POManager(page);
+    const pOManager = new POManager(page, data.productName);
 
     const loginPo = pOManager.goLogin();
     await loginPo.goToURL();
@@ -24,15 +24,15 @@ test(`Product '${data.productName}'`, async ({ browser}) => {
     await checkoutPO.checkoutPage(expect);
 
     const placeOrderPO = pOManager.goPlaceorder();
-    await placeOrderPO.shippingInformation(data.dropdownOption);
+    await placeOrderPO.shippingInformation(data.dropdownOption, data.countryKeywords);
     await placeOrderPO.personalInformation(data.CVV, data.nameOnCard, data.coupon, data.coupText, data.email, expect);
 
     const orderDetailsPO = pOManager.goOrderDetails();
     const orderID = await orderDetailsPO.orderDetails(expect);
 
     const orderPresenceandSummary = pOManager.goOrderSummary();
-    await orderPresenceandSummary.orderPresence(data.orderID);
-    await orderPresenceandSummary.orderSummary(data.orderID, expect);
+    await orderPresenceandSummary.orderPresence(orderID);
+    await orderPresenceandSummary.orderSummary(orderID, expect);
 
 })
 };

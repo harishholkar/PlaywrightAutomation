@@ -7,10 +7,10 @@ const {OrderPresenceandSummary} = require('../PageObjectRaw/OrderPresenceandSumm
 
 class POManager {
 
-    constructor(page) {
+    constructor(page, productName) {
         this.loginPo = new LoginPO(page);
         this.dashboardPO = new DashboardPO(page);
-        this.checkoutPO = new CheckoutPO(page);
+        this.checkoutPO = new CheckoutPO(page, productName);
         this.placeOrderPO = new PlaceOrderPO(page)
         this.orderDetailsPO = new OrderDetailsPO(page);
         this.orderPresenceandSummary = new OrderPresenceandSummary(page);

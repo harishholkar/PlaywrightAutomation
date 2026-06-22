@@ -10,8 +10,8 @@ class PlaceOrderPO {
         this.applyButton = page.locator("button:has-text('Apply Coupon')")
     }
 
-    async shippingInformation(dropdownOption) {
-        await this.dropdown.pressSequentially('ind');
+    async shippingInformation(dropdownOption, countryKeywords) {
+        await this.dropdown.pressSequentially(countryKeywords);
         await this.page.waitForSelector("section.ta-results button");
         const optionCount = await this.DDOptions.count();
         for (let i = 0; i < optionCount; i++) {

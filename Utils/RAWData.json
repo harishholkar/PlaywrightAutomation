@@ -4,10 +4,10 @@
     "productName" : "ADIDAS ORIGINAL",    
     "countryKeywords" : "cub",    
     "dropdownOption" : " Cuba",    
-    "cvvCode" : "054",    
-    "cardName" : "Body Time",    
+    "CVV" : "054",    
+    "nameOnCard" : "Body Time",    
     "coupon" : "rahulshettyacademy",    
-    "couponText" : "Applied"
+    "coupText" : "Applied"
 },
 {
     "email" : "ayushkhanna@gmail.com",    
@@ -15,8 +15,8 @@
     "productName" : "iphone 13 pro",    
     "countryKeywords" : "ind",    
     "dropdownOption" : " India",    
-    "cvvCode" : "078",    
-    "cardName" : "Automation Time",    
+    "CVV" : "078",    
+    "nameOnCard" : "Automation Time",    
     "coupon" : "rahulshettyacademy",    
-    "couponText" : "Applied"
+    "coupText" : "Applied"
 }]
