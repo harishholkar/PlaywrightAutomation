@@ -5,7 +5,7 @@ const dataset = require('../Utils/RAWData.json');
 const {fixtureData} = require('../Utils/RawFixtureData');
 
 for (const data of dataset){
-test(`Product '${data.CVV}'`, async ({ browser}) => {
+test(`Product '${data.productName}'`, async ({ browser}) => {
 
     const context = await browser.newContext();
     const page = await context.newPage();
