@@ -1,38 +1,31 @@
-const { test, expect } = require('@playwright/test');
-const { log, count } = require('node:console');
-const { POManager } = require('../PageObjectRaw/POManager');
-const dataset = require('../Utils/RAWData.json');
-const {fixtureData} = require('../Utils/RawFixtureData');
+//login
+const { test, expect, request } = require('@playwright/test');
 
-for (const data of dataset){
-test(`Product '${data.productName}'`, async ({ browser}) => {
+let webContext;
+
+test.beforeAll(async ({ browser }) => {
 
     const context = await browser.newContext();
     const page = await context.newPage();
+    await page.goto("https://rahulshettyacademy.com/client");
+    await page.locator("#userEmail").fill("harishholkar.99@gmail.com")
+    await page.locator("#userPassword").fill("Udemy@5657");
+    await page.locator("#login").click();
+    await page.locator("img.card-img-top").first().waitFor();
+    await context.storageState({ path: 'state.json' });
+    webContext = await browser.newContext({ storageState: 'state.json' });
+});
 
-    const pOManager = new POManager(page, data.productName);
+test('practice', async () => {
 
-    const loginPo = pOManager.goLogin();
-    await loginPo.goToURL();
-    await loginPo.loginCreds(data.email, data.pass);
-
-    const dashboardPO = pOManager.goDashboard();
-    await dashboardPO.selectProduct(data.productName);
-    await dashboardPO.clickCart();
-
-    const checkoutPO = pOManager.goCheckout();
-    await checkoutPO.checkoutPage(expect);
-
-    const placeOrderPO = pOManager.goPlaceorder();
-    await placeOrderPO.shippingInformation(data.dropdownOption, data.countryKeywords);
-    await placeOrderPO.personalInformation(data.CVV, data.nameOnCard, data.coupon, data.coupText, data.email, expect);
-
-    const orderDetailsPO = pOManager.goOrderDetails();
-    const orderID = await orderDetailsPO.orderDetails(expect);
-
-    const orderPresenceandSummary = pOManager.goOrderSummary();
-    await orderPresenceandSummary.orderPresence(orderID);
-    await orderPresenceandSummary.orderSummary(orderID, expect);
+    const page = await webContext.newPage();
+    await page.goto("https://rahulshettyacademy.com/client")
 
 })
-};
+
+test('practice2', async () => {
+
+    const page = await webContext.newPage();
+    await page.goto("https://rahulshettyacademy.com/client")
+
+})

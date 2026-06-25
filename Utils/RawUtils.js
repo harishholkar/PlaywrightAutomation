@@ -1,49 +1,31 @@
 class RawUtils {
 
-    constructor(apiContext, postReqPayload, createOrderPayload, expect) {
+    constructor(apiContext, loginPayload, createOrderpaylaod) {
         this.apiContext = apiContext;
-        this.postReqPayload = postReqPayload;
-        this.createOrderPayload = createOrderPayload;
-        this.expect = expect;
-    }
+        this.loginPayload = loginPayload;
+        this.createOrderpaylaod = createOrderpaylaod;
 
-    async getToken() {
-        //Login  API
-
-        const postResponse = await this.apiContext.post('https://rahulshettyacademy.com/api/ecom/auth/login',
-            {
-                data: this.postReqPayload
-            }
-        )
-        this.expect(await postResponse.ok()).toBeTruthy();
-        const jsonResponse = await postResponse.json();
-        const token = jsonResponse.token;
-        console.log(token);
-        return token;
     }
 
     async getOrderID() {
-        //Order Creation API
-        let requiredInput = {};
-        requiredInput.token = await this.getToken();
-        const createOrderResponse = await this.apiContext.post('https://rahulshettyacademy.com/api/ecom/order/create-order',
+
+        let details = {};
+        details.token = await this.getToken();
+        const createOrderResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order",
             {
-                data: this.createOrderPayload,
+                data: this.createOrderpaylaod,
                 headers: {
-                    'Authorization': requiredInput.token,
+                    'Authorization': details.token,
                     'Content-type': 'application/json'
                 }
             }
         )
-        this.expect(await createOrderResponse.ok()).toBeTruthy();
-        const jsonCOResponse = await createOrderResponse.json();
-        const orderID = jsonCOResponse.orders[0];
+        const createOrderResponseJson = await createOrderResponse.json();
+        const orderID = createOrderResponseJson.orders[0];
         console.log(orderID);
-
-        requiredInput.orderID = orderID;
-        return requiredInput;
-
+        details.orderID = orderID;
+        return details;
     }
+}
 
-};
-module.exports = {RawUtils};
+module.exports = { RawUtils }

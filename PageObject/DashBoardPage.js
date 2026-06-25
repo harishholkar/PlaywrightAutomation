@@ -1,4 +1,4 @@
-export class DashBoardPage {
+class DashBoardPage {
 
     constructor(page) {
         this.productArea = page.locator(".card-body");
@@ -26,3 +26,4 @@ export class DashBoardPage {
         await this.cart.click();
     }
 }
+module.exports={DashBoardPage}

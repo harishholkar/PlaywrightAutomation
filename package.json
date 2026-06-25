@@ -11,7 +11,7 @@
     "webTests": "npx playwright test --grep @web",
     "apiTests": "npx playwright test --grep @API",
     "tests": "npx playwright test tests/RAW.spec.js"
-    },
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "allure-playwright": "^3.9.0"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^13.0.0",
     "exceljs": "^4.4.0",
     "playwright": "^1.60.0"
   }

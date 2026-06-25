@@ -1,4 +1,4 @@
-export class OrderDetailsPage {
+class OrderDetailsPage {
 
     constructor(page) {
         this.orderMsg = page.locator(".hero-primary");
@@ -13,3 +13,4 @@ export class OrderDetailsPage {
         return exactOrderID;
     }
 }
+module.exports={OrderDetailsPage}

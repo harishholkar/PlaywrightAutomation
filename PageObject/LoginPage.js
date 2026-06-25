@@ -1,4 +1,4 @@
-export class LoginPage {
+class LoginPage {
 
     constructor(page) {
         this.page = page;
@@ -21,3 +21,4 @@ export class LoginPage {
     }
 
 }
+module.exports={LoginPage}

@@ -1,4 +1,4 @@
-export class OrderPresenceAndSummary {
+class OrderPresenceAndSummary {
 
     constructor(page) {
         this.Odrers = page.locator("[routerlink='/dashboard/myorders']");
@@ -21,3 +21,4 @@ export class OrderPresenceAndSummary {
         await expect(this.orderSumOrId).toHaveText(orderID);
     }
 }
+module.exports={OrderPresenceAndSummary}

@@ -1,11 +1,11 @@
-    import {LoginPage} from './LoginPage';
-    import {DashBoardPage} from './DashBoardPage';
-    import {CheckoutAndPlaceOrderPage} from './CheckoutAndPlaceOrderPage';
-    import {OrderDetailsPage} from './OrderDetailsPage';
-    import {OrderPresenceAndSummary} from './OrderPresenceAndSummary';
+    const {LoginPage} = require('./LoginPage');
+    const {DashBoardPage} = require('./DashBoardPage');
+    const {CheckoutAndPlaceOrderPage} = require('./CheckoutAndPlaceOrderPage');
+    const {OrderDetailsPage} = require('./OrderDetailsPage');
+    const {OrderPresenceAndSummary} = require('./OrderPresenceAndSummary');
 
 
-export class POManager {
+class POManager {
 
     constructor(page) {
         this.page = page;
@@ -37,3 +37,4 @@ export class POManager {
     }
 
 }
+module.exports={POManager}
