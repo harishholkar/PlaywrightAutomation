@@ -1,31 +1,15 @@
-//login
-const { test, expect, request } = require('@playwright/test');
+const { test, expect } = require('@playwright/test');
+const { Given, When, Then } = require('@cucumber/cucumber');
+const { request } = require('node:http');
 
-let webContext;
+test('practice', async ({ page }) => {
 
-test.beforeAll(async ({ browser }) => {
-
-    const context = await browser.newContext();
-    const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
-    await page.locator("#userEmail").fill("harishholkar.99@gmail.com")
-    await page.locator("#userPassword").fill("Udemy@5657");
-    await page.locator("#login").click();
-    await page.locator("img.card-img-top").first().waitFor();
-    await context.storageState({ path: 'state.json' });
-    webContext = await browser.newContext({ storageState: 'state.json' });
-});
+    await page.locator("#userEmail").fill("harishholkar@gmail.com");
+    console.log(await page.locator("#userEmail").inputValue());
+    await page.screenshot({path : 'trial1.png'});
+    await page.locator("#userEmail").screenshot({path : 'trial2.png'});
 
-test('practice', async () => {
-
-    const page = await webContext.newPage();
-    await page.goto("https://rahulshettyacademy.com/client")
-
-})
-
-test('practice2', async () => {
-
-    const page = await webContext.newPage();
-    await page.goto("https://rahulshettyacademy.com/client")
+    expect(await page.screenshot()).toMatchSnapshot('trial3.png');
 
 })

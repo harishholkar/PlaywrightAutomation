@@ -3,6 +3,7 @@
     const {CheckoutAndPlaceOrderPage} = require('./CheckoutAndPlaceOrderPage');
     const {OrderDetailsPage} = require('./OrderDetailsPage');
     const {OrderPresenceAndSummary} = require('./OrderPresenceAndSummary');
+    const {CucumberLoginValidations} = require('./CucumberLoginValidations');
 
 
 class POManager {
@@ -14,6 +15,7 @@ class POManager {
         this.checkoutAndPlaceOrderPage = new CheckoutAndPlaceOrderPage(this.page);
         this.orderDetailsPage = new OrderDetailsPage(this.page);
         this.orderPresenceAndSummary = new OrderPresenceAndSummary(this.page);
+        this.cucumberLoginValidations = new CucumberLoginValidations(page);
     };
 
     goToLogin() {
@@ -34,6 +36,10 @@ class POManager {
 
     goToOrderPresenceAndSummary(){
         return this.orderPresenceAndSummary;
+    }
+
+    goToCucumberLoginValidations(){
+        return this.cucumberLoginValidations;
     }
 
 }
