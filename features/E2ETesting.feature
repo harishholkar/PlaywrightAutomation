@@ -11,7 +11,7 @@ Then Verify that the placed order is present into the order history page
 
 Examples:
 |dropdownOption|countryKeyword|cvvCode|cardName|coupon|email|couponText|
-|India|ind|987|Automation Time|rahulshettyacademy|harishholkar.99@gmail.com|Applieds|  // to fail the step make 'Applieds'
+|India|ind|987|Automation Time|rahulshettyacademy|harishholkar.99@gmail.com|Applied|  // to fail the step make 'Applieds'
 
 
 @Regression
