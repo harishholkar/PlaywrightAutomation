@@ -43,6 +43,7 @@ test('Static Drop Down', async({page})=>{
     await expect(blinkLink1).toHaveAttribute("class","blinkingText");
     await expect(blinkLink2).toHaveAttribute("class","blinkingText");
 
+
 });
 
 

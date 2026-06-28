@@ -11,4 +11,10 @@ Then Verify that the placed order is present into the order history page
 
 Examples:
 |dropdownOption|countryKeyword|cvvCode|cardName|coupon|email|couponText|
-|India|ind|987|Automation Time|rahulshettyacademy|harishholkar.99@gmail.com|Applied|  // to fail the step make 'Applieds'
+|India|ind|987|Automation Time|rahulshettyacademy|harishholkar.99@gmail.com|Applieds|  // to fail the step make 'Applieds'
+
+
+@Regression
+Scenario: Verify the login validations
+Given The user logged in with the creds as "harishholkar.999@gmail.com" and "Udemy@5657"
+When Verify the error message displayed

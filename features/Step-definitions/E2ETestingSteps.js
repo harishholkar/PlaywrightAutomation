@@ -39,7 +39,7 @@ Then('Verify that the placed order is present into the order history page', { ti
 
 });
 
-Given('The user logged in with the creds as {string} and {string}', {timeout:100*1000}, async function (username, password) {
+Given('The user logged in with the creds as {string} and {string}', { timeout: 100 * 1000 }, async function (username, password) {
     this.cucumberLoginValidations = this.poManager.goToCucumberLoginValidations();
     await this.cucumberLoginValidations.loginWithIncorrectCreds(username, password);
 });
