@@ -35,11 +35,14 @@ pipeline {
     post {
 
         always {
-            echo 'Archiving Playwright report...'
-
-            archiveArtifacts artifacts: 'playwright-report/**',
-                               allowEmptyArchive: true,
-                               fingerprint: true
+            publishHTML([
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'Playwright Report'
+            ])
         }
 
         success {
