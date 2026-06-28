@@ -27,7 +27,7 @@ pipeline {
         stage('Run Automation Tests') {
             steps {
                 echo 'Executing Playwright tests...'
-                bat 'npx cucumber-js --tags "@Regression" --parallel 2 --exit'
+                bat 'npm run apiTests'
             }
         }
     }
