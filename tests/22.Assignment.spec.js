@@ -49,7 +49,7 @@ test('Assignment Banner Visible', async ({ page }) => {
             })
         }
     )
-// justgithub
+
     await page.locator('#nav-events').click();
     await page.waitForResponse('https://api.eventhub.rahulshettyacademy.com/api/events?page=1&limit=12');
 
