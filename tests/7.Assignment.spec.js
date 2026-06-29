@@ -15,6 +15,7 @@ test('Assignment 1', async({page})=>{
     const orderSumOrId = page.locator("div.col-text");
     const OrderSummary = page.locator("div.email-title");
     
+    //for github actions
 
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
     await emailLoc.fill(email);
